@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Stream</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+    <link rel = "stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Video Stream</h1>
+        <div class="button-container">
+            <button onclick="setMode('person')">Person Detection</button>
+            <button onclick="setMode('heat_map')">Heat Map</button>
+        </div>
+        <div class="video-container">
+            <img src="{{ url_for('video_feed') }}" alt="Video Stream" id="video-stream">
+        </div>
+    </div>
+    
+    <script>
+        function setMode(mode) {
+            fetch(`/set_mode/${mode}`);
+        }
+    </script>
+</body>
+</html>
