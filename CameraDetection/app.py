@@ -28,7 +28,7 @@ mode = "person"
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('NeuralNetwork/Frontend/generic.html')
 
 
 @app.route('/set_mode/<new_mode>')
