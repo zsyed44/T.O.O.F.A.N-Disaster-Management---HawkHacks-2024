@@ -1,108 +1,245 @@
 <!DOCTYPE HTML>
-
 <html>
-	<head>
-		<title>Helper Chat</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
+<head>
+    <title>Helper Chat</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        .chatbox__support {
+            display: none;
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            width: 23rem;
+            height: 30rem;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+        }
+        .chatbox__support.open {
+            display: block;
+        }
+        .chatbox__content--header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .chatbox__messages {
+            height: 65%;
+            overflow-y: auto;
+            background: white;
+        }
+        .messages__item {
+            padding: 1rem;
+            margin: 1rem;
+            border-radius: 1rem;
+        }
+        .messages__item--visitor {
+            background: #bfb749;
+            margin-left: 50%;
+        }
+        .messages__item--operator {
+            background: gray;
+            margin-right: 50%;
+        }
+        .chatbox__footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(to right, #bfb749, #fdfcf0);
+        }
+        .chatbox__button {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+        }
+    </style>
+</head>
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
 
-							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.png" alt="" /></span><span class="title">TOOFAN</span>
-								</a>
+                <!-- Logo -->
+                <a href="index.html" class="logo">
+                    <span class="symbol"><img src="images/logo.png" alt="" /></span><span class="title">TOOFAN</span>
+                </a>
 
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
+                <!-- Nav -->
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
 
-						</div>
-					</header>
+            </div>
+        </header>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-                            <li><a href="index.html">Home</a></li>
-							<li><a href="index.html">Danger Zone Detection</a></li>
-							<li><a href="generic.html">Detection</a></li>
-							<li><a href="chatbox.html">Helper Chat</a></li>
-							<li><a href="elements.html">Elements</a></li>
-						</ul>
-					</nav>
+        <!-- Menu -->
+        <nav id="menu">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Danger Zone Detection</a></li>
+                <li><a href="generic.html">Detection</a></li>
+                <li><a href="chatbox.html">Helper Chat</a></li>
+                <li><a href="elements.html">Elements</a></li>
+            </ul>
+        </nav>
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<h1>Helper Chat</h1>
-							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel venenatis mauris vehicula hendrerit.</p>
-							<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-						</div>
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<section>
-								<h2>Get in touch</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<input type="text" name="name" id="name" placeholder="Name" />
-										</div>
-										<div class="field half">
-											<input type="email" name="email" id="email" placeholder="Email" />
-										</div>
-										<div class="field">
-											<textarea name="message" id="message" placeholder="Message"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send" class="primary" /></li>
-									</ul>
-								</form>
-							</section>
-							<section>
-								<h2>Follow</h2>
-								<ul class="icons">
-									<li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
-								</ul>
-							</section>
-							<ul class="copyright">
-                                <li>&copy; All rights reserved</li><li>TOOFAN</a></li>
-                            </ul>
-						</div>
-					</footer>
-
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                <h1>Helper Chat</h1>
+                <span class="image main"><img src="images/pic13.jpg" alt="" /></span>
 			</div>
+        </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        <!-- Chatbox -->
+        <div class="chatbox__support chatbox rounded-2xl overflow-hidden w-[23rem] h-[30rem] shadow-xl" id="chatbox">
+            <!-- Chatbox Header -->
+            <div class="flex justify-between p-4 bg-gradient-to-r from-[#fdfcf0] to-[#bfb749]">
+                <div class="px-4">
+                    <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image" />
+                </div>
+                <div class="chatbox__content--header">
+                    <h4 class="text-lg font-semibold">Chat support</h4>
+                    <p class="chatbox__description--header text-sm text-gray-500">Hey there! How are you feeling today?</p>
+                </div>
+            </div>
 
-	</body>
+            <!-- Chatbox Messages -->
+            <div class="chatbox__messages h-[65%] overflow-y-auto bg-white" id="chatbox-messages"></div>
+
+            <!-- Chatbox Footer -->
+            <div class="chatbox__footer px-5 py-2 bg-gradient-to-r from-[#bfb749] to-[#fdfcf0] flex justify-center items-center">
+                <input class="h-full w-full p-2 rounded-2xl" type="text" placeholder="Write a message..." id="chatbox-input">
+                <button class="chatbox__send--footer send__button p-4 items-center text-[#bfb749] font-semibold" id="chatbox-send">Send</button>
+            </div>
+        </div>
+
+        <!-- Chatbox Button -->
+        <div class="chatbox__button pt-7">
+            <button class="text-6xl text-[#bfb749] shadow-xl rounded-3xl p-2 float-right bg-white" id="chatbox-toggle">Chat</button>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <section>
+                    <h2>Get in touch</h2>
+                    <form method="post" action="#">
+                        <div class="fields">
+                            <div class="field half">
+                                <input type="text" name="name" id="name" placeholder="Name" />
+                            </div>
+                            <div class="field half">
+                                <input type="email" name="email" id="email" placeholder="Email" />
+                            </div>
+                            <div class="field">
+                                <textarea name="message" id="message" placeholder="Message"></textarea>
+                            </div>
+                        </div>
+                        <ul class="actions">
+                            <li><input type="submit" value="Send" class="primary" /></li>
+                        </ul>
+                    </form>
+                </section>
+                <section>
+                    <h2>Follow</h2>
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+                        <li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+                        <li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+                        <li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+                        <li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+                    </ul>
+                </section>
+                <ul class="copyright">
+                    <li>&copy; All rights reserved</li><li>TOOFAN</a></li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        const chatbox = document.getElementById('chatbox');
+        const chatboxToggle = document.getElementById('chatbox-toggle');
+        const chatboxMessages = document.getElementById('chatbox-messages');
+        const chatboxInput = document.getElementById('chatbox-input');
+        const chatboxSend = document.getElementById('chatbox-send');
+
+        let messages = [];
+
+        chatboxToggle.addEventListener('click', () => {
+            if (chatbox.classList.contains('open')) {
+                chatbox.classList.remove('open');
+                chatboxToggle.textContent = 'Chat';
+            } else {
+                chatbox.classList.add('open');
+                chatboxToggle.textContent = 'Close';
+            }
+        });
+
+        chatboxSend.addEventListener('click', async () => {
+            const inputValue = chatboxInput.value.trim();
+            if (inputValue === '') return;
+
+            const userMessage = { name: "User", message: inputValue };
+            messages.push(userMessage);
+            displayMessage(userMessage);
+
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: inputValue,
+                        chatHistory: messages.filter(msg => msg.name === 'User').map(msg => ({ text: msg.message, role: 'user' }))
+                    })
+                });
+
+                const text = await response.text();
+                try {
+                    const data = JSON.parse(text);
+                    if (response.ok) {
+                        // Handle the response from the backend
+                    } else {
+                        console.error('Error with backend:', data.error);
+                    }
+                } catch (e) {
+                    console.error('Failed to parse JSON:', text);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+        function displayMessage(message) {
+            const messageItem = document.createElement('div');
+            messageItem.className = `messages__item ${message.name === "Sam" ? 'messages__item--visitor' : 'messages__item--operator'}`;
+            messageItem.textContent = message.message;
+            chatboxMessages.appendChild(messageItem);
+            chatboxInput.value = '';
+        }
+    </script>
+</body>
 </html>
