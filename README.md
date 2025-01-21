@@ -4,8 +4,8 @@
 TOOFAN is an AI-powered Arduino car designed for disaster response and survivor assistance. Equipped with danger zone detection and a helper chat feature, TOOFAN leverages sensors and machine learning to identify hazards, navigate disaster-stricken areas, and provide real-time communication with survivors. This innovative project integrates advanced technology into a compact and versatile platform, enhancing search and rescue operations.
 
 ## 🔗 Links
-- [TOOFAN Webpage](#)
-- [GitHub Repository](#)
+- [TOOFAN Webpage](https://zsyed44.github.io/T.O.O.F.A.N-Disaster-Management---HawkHacks-2024/dangerzone.html)
+- [TAIKAI Page with **VIDEO DEMOS**](https://taikai.network/hackbox/hackathons/hawkhacks/projects/clwdeztan0ek7z9011ozxyf4s/idea)
 
 ---
 
